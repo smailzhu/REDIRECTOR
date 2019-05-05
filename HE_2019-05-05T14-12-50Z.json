@@ -1,0 +1,354 @@
+{
+	"request": [
+		{
+			"enable": true,
+			"name": "plurk go",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://(?:www[.])?plurk[.]com/go\\?u=([^&]+).*",
+			"exclude": "",
+			"group": "REDIRECTOR",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"enable": true,
+			"name": "go plurk",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://(?:go|l)[.]plurk[.]com/[?]url=([^&]+).*",
+			"exclude": "",
+			"group": "REDIRECTOR",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"enable": true,
+			"name": "backpackers",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "https?://www\\.backpackers\\.com\\.tw\\/forum\\/redirector\\.php\\?url=(.*)",
+			"exclude": "",
+			"group": "REDIRECTOR",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"enable": true,
+			"name": "0zz.cc",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "0zz\\.cc\\/redir\\.php\\?url=(.*)&origin=",
+			"exclude": "",
+			"group": "REDIRECTOR",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1",
+			"exampleUrl": "https://0zz.cc/redir.php?url=https%3A%2F%2Fpackagecontrol.io%2Finstallation&origin=https%3A%2F%2Fwww.jinnsblog.com",
+			"exampleResult": "https://packagecontrol.io/installation",
+			"error": null,
+			"processMatches": "urlDecode",
+			"appliesTo": [
+				"main_frame"
+			]
+		},
+		{
+			"enable": true,
+			"name": "Plurk force login",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^(https?://(www[.])plurk[.]com)/portal(/)?$",
+			"exclude": "",
+			"group": "300",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1/login"
+		},
+		{
+			"enable": true,
+			"name": "Plurk force mobile (iframe)",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://www[.]plurk[.]com/p/",
+			"exclude": "",
+			"group": "300",
+			"isFunction": true,
+			"code": "if (!detail.isFrame && detail.type === 'sub_frame') {\n  return val.replace('/p/', '/m/p/')\n} else {\n  return val\n}"
+		},
+		{
+			"enable": true,
+			"name": "Pixiv fanbox",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^(https://www[.]pixiv[.]net)/fanbox/creator/(\\d+)(/)?.*$",
+			"exclude": "",
+			"group": "300",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1/member.php?id=$2"
+		},
+		{
+			"enable": true,
+			"name": "jQuery",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://code[.]jquery[.]com/jquery-((?:\\d[.]?)+)[.](.*js)",
+			"exclude": "",
+			"group": "Google lib CDN",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://ajax.googleapis.com/ajax/libs/jquery/$1/jquery.$2"
+		},
+		{
+			"enable": true,
+			"name": "SteamDB",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^(https?://steamdb[.]info/app/\\d+/?)$",
+			"exclude": "",
+			"group": "300",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1#js-chart-prices"
+		},
+		{
+			"enable": true,
+			"name": "Plurk bypass redirect",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://(?:www[.])?plurk[.]com/go\\?u=([^&]+).*",
+			"exclude": "",
+			"group": "300",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"enable": true,
+			"name": "Plurk bypass redirect",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^https?://(?:go|l)[.]plurk[.]com/[?]url=([^&]+).*",
+			"exclude": "",
+			"group": "300",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"enable": true,
+			"name": "aptg login",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "https?://sso.aptg.com.tw/cas/login\\?service=(.*)",
+			"exclude": "",
+			"group": "REDIRECTOR",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "$1"
+		},
+		{
+			"name": "www.backpackers.com.tw",
+			"exampleUrl": "https://www.backpackers.com.tw/forum/redirector.php?url=http%3A%2F%2Fwww.fujikyu-railway.jp%2Ffujisan-view-express%2Ftimetable%2F",
+			"exampleResult": "http://www.fujikyu-railway.jp/fujisan-view-express/timetable/",
+			"error": null,
+			"pattern": "www\\.backpackers\\.com\\.tw\\/forum\\/redirector\\.php\\?url=(.*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "urlDecode",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "google redirect",
+			"exampleUrl": "https://www.google.com/url?q=http%3A%2F%2Fpdc.adm.ncu.edu.tw%2FAdmission%2F%25E5%2590%2584%25E9%25A0%2585%25E6%258B%259B%25E7%2594%259F%2F%25E7%25A2%25A9%25E5%25A3%25AB%25E7%258F%25AD%25E8%2580%2583%25E8%25A9%25A6%2F108%2Findex.htm&sa=D&usd=2&usg=AFQjCNEnP5UwfLrtX8Mc7PfOLNbhTtIbVw",
+			"exampleResult": "http://pdc.adm.ncu.edu.tw/Admission/%E5%90%84%E9%A0%85%E6%8B%9B%E7%94%9F/%E7%A2%A9%E5%A3%AB%E7%8F%AD%E8%80%83%E8%A9%A6/108/index.htm",
+			"error": null,
+			"pattern": "https:\\/\\/www\\.google\\.com\\/url\\?q=(.*)&sa",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "urlDecode",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "阿達",
+			"exampleUrl": "https://sn.kocpc.com.tw/index.html?url=http%3A%2F%2Fwww.freenom.com%2F",
+			"exampleResult": "http://www.freenom.com/",
+			"error": null,
+			"pattern": "sn\\.kocpc\\.com\\.tw\\/index\\.html\\?url=(.*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "urlDecode",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "gamer",
+			"exampleUrl": "https://ref.gamer.com.tw/redir.php?url=http%3A%2F%2Ftest-ipv6.com%2F",
+			"exampleResult": "http://test-ipv6.com/",
+			"error": null,
+			"pattern": "ref\\.gamer\\.com\\.tw\\/redir\\.php\\?url=(.*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "urlDecode",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "M01",
+			"exampleUrl": "https://www.mobile01.com/redirect.php?url=http%3A%2F%2Ftinyurl.com%2Fyfmdoop",
+			"exampleResult": "http://tinyurl.com/yfmdoop",
+			"error": null,
+			"pattern": "https:\\/\\/www\\.mobile01\\.com\\/redirect\\.php\\?url=(.*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "urlDecode",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "pttgame",
+			"exampleUrl": "https://pttgame.com/steam/M.1529678052.A.DA6.html",
+			"exampleResult": "https://www.ptt.cc/bbs/steam/M.1529678052.A.DA6.html",
+			"error": null,
+			"pattern": "https?:\\/\\/pttgame.com(\\/.*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "https://www.ptt.cc/bbs$1",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "remove hc_ref",
+			"exampleUrl": "https://www.facebook.com/WithGaLoveTaiwan/?ref=nf&hc_ref=ARTSOdWWyPaezqk4otYNbmphf9N3_9TJUGfw1t30GjvhS0XZWrpyGBUkTwUsLWPsafk",
+			"exampleResult": "https://www.facebook.com/WithGaLoveTaiwan/?ref=nf",
+			"error": null,
+			"pattern": "(.*)(\\?|\\&)hc_ref=",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "moptt",
+			"exampleUrl": "https://moptt.tw/p/Gossiping.M.1542948982.A.1E1",
+			"exampleResult": "https://www.ptt.cc/bbs/Gossiping/M.1542948982.A.1E1.html",
+			"error": null,
+			"pattern": ".*moptt.tw\\/p\\/([\\w+-]*).([\\w.]+)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "https://www.ptt.cc/bbs/$1/$2.html",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "Remove fbclid",
+			"exampleUrl": "http://www.vixual.net/blog/archives/129?var1=test&fbclid=test",
+			"exampleResult": "http://www.vixual.net/blog/archives/129?var1=test",
+			"error": null,
+			"pattern": "(.*)(\\?|\\&)fbclid=",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "Remove UTM",
+			"exampleUrl": "http://www.vixual.net/blog/archives/129?utm_source=test&utm_medium-test&utm_content=test&hc_ref=test",
+			"exampleResult": "http://www.vixual.net/blog/archives/129",
+			"error": null,
+			"pattern": "(.*)(\\?|\\&)utm_source=\\w*?(\\&utm_medium=\\w*)?(\\&utm_content=\\w*)?(\\&utm_campaign=\\w*)?",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$1",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		},
+		{
+			"name": "85PO",
+			"exampleUrl": "https://www.85po.com/contents/albums/main/200x150/8000/8876/117348.jpg",
+			"exampleResult": "https://www.85po.com/contents/albums/main/1200x900/8000/8876/117348.jpg",
+			"error": null,
+			"pattern": "(^https?:\\/\\/www.85po.com\\/contents\\/albums\\/main\\/)[0-9x]*(\\/(.)*)",
+			"action": "redirect",
+			"matchType": "regexp",
+			"to": "$11200x900$2",
+			"ruleType": "redirect",
+			"processMatches": "noProcessing",
+			"enable": true,
+			"appliesTo": [
+				"main_frame"
+			],
+			"isFunction": false,
+			"group": "REDIRECTOR"
+		}
+	],
+	"sendHeader": [],
+	"receiveHeader": []
+}
