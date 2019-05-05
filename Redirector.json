@@ -1,0 +1,198 @@
+{
+    "createdBy": "Redirector v3.2.1",
+    "createdAt": "2019-03-21T11:48:23.059Z",
+    "redirects": [
+        {
+            "description": "www.backpackers.com.tw",
+            "exampleUrl": "https://www.backpackers.com.tw/forum/redirector.php?url=http%3A%2F%2Fwww.fujikyu-railway.jp%2Ffujisan-view-express%2Ftimetable%2F",
+            "exampleResult": "http://www.fujikyu-railway.jp/fujisan-view-express/timetable/",
+            "error": null,
+            "includePattern": "www\\.backpackers\\.com\\.tw\\/forum\\/redirector\\.php\\?url=(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "0zz.cc",
+            "exampleUrl": "https://0zz.cc/redir.php?url=https%3A%2F%2Fpackagecontrol.io%2Finstallation&origin=https%3A%2F%2Fwww.jinnsblog.com",
+            "exampleResult": "https://packagecontrol.io/installation",
+            "error": null,
+            "includePattern": "0zz\\.cc\\/redir\\.php\\?url=(.*)&origin=",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "google redirect",
+            "exampleUrl": "https://www.google.com/url?q=http%3A%2F%2Fpdc.adm.ncu.edu.tw%2FAdmission%2F%25E5%2590%2584%25E9%25A0%2585%25E6%258B%259B%25E7%2594%259F%2F%25E7%25A2%25A9%25E5%25A3%25AB%25E7%258F%25AD%25E8%2580%2583%25E8%25A9%25A6%2F108%2Findex.htm&sa=D&usd=2&usg=AFQjCNEnP5UwfLrtX8Mc7PfOLNbhTtIbVw",
+            "exampleResult": "http://pdc.adm.ncu.edu.tw/Admission/%E5%90%84%E9%A0%85%E6%8B%9B%E7%94%9F/%E7%A2%A9%E5%A3%AB%E7%8F%AD%E8%80%83%E8%A9%A6/108/index.htm",
+            "error": null,
+            "includePattern": "https:\\/\\/www\\.google\\.com\\/url\\?q=(.*)&sa",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "阿達",
+            "exampleUrl": "https://sn.kocpc.com.tw/index.html?url=http%3A%2F%2Fwww.freenom.com%2F",
+            "exampleResult": "http://www.freenom.com/",
+            "error": null,
+            "includePattern": "sn\\.kocpc\\.com\\.tw\\/index\\.html\\?url=(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "gamer",
+            "exampleUrl": "https://ref.gamer.com.tw/redir.php?url=http%3A%2F%2Ftest-ipv6.com%2F",
+            "exampleResult": "http://test-ipv6.com/",
+            "error": null,
+            "includePattern": "ref\\.gamer\\.com\\.tw\\/redir\\.php\\?url=(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "M01",
+            "exampleUrl": "https://www.mobile01.com/redirect.php?url=http%3A%2F%2Ftinyurl.com%2Fyfmdoop",
+            "exampleResult": "http://tinyurl.com/yfmdoop",
+            "error": null,
+            "includePattern": "https:\\/\\/www\\.mobile01\\.com\\/redirect\\.php\\?url=(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "pttgame",
+            "exampleUrl": "https://pttgame.com/steam/M.1529678052.A.DA6.html",
+            "exampleResult": "https://www.ptt.cc/bbs/steam/M.1529678052.A.DA6.html",
+            "error": null,
+            "includePattern": "https?:\\/\\/pttgame.com(\\/.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.ptt.cc/bbs$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "remove hc_ref",
+            "exampleUrl": "https://www.facebook.com/WithGaLoveTaiwan/?ref=nf&hc_ref=ARTSOdWWyPaezqk4otYNbmphf9N3_9TJUGfw1t30GjvhS0XZWrpyGBUkTwUsLWPsafk",
+            "exampleResult": "https://www.facebook.com/WithGaLoveTaiwan/?ref=nf",
+            "error": null,
+            "includePattern": "(.*)(\\?|\\&)hc_ref=",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "moptt",
+            "exampleUrl": "https://moptt.tw/p/Gossiping.M.1542948982.A.1E1",
+            "exampleResult": "https://www.ptt.cc/bbs/Gossiping/M.1542948982.A.1E1.html",
+            "error": null,
+            "includePattern": ".*moptt.tw\\/p\\/([\\w+-]*).([\\w.]+)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.ptt.cc/bbs/$1/$2.html",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Remove fbclid",
+            "exampleUrl": "http://www.vixual.net/blog/archives/129?var1=test&fbclid=test",
+            "exampleResult": "http://www.vixual.net/blog/archives/129?var1=test",
+            "error": null,
+            "includePattern": "(.*)(\\?|\\&)fbclid=",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Remove UTM",
+            "exampleUrl": "http://www.vixual.net/blog/archives/129?utm_source=test&utm_medium-test&utm_content=test&hc_ref=test",
+            "exampleResult": "http://www.vixual.net/blog/archives/129",
+            "error": null,
+            "includePattern": "(.*)(\\?|\\&)utm_source=\\w*?(\\&utm_medium=\\w*)?(\\&utm_content=\\w*)?(\\&utm_campaign=\\w*)?",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "85PO",
+            "exampleUrl": "https://www.85po.com/contents/albums/main/200x150/8000/8876/117348.jpg",
+            "exampleResult": "https://www.85po.com/contents/albums/main/1200x900/8000/8876/117348.jpg",
+            "error": null,
+            "includePattern": "(^https?:\\/\\/www.85po.com\\/contents\\/albums\\/main\\/)[0-9x]*(\\/(.)*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$11200x900$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        }
+    ]
+}
